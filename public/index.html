@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css-files/index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout 1 | Home</title>
+    <!-- CACHEBUSTING. https://petrapixel.neocities.org/coding/cachebusting - fixes cache issues -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Path to your CSS file (like usual), or empty ("") if you don't have one:
+            const CSS_FILE_PATH = "style.css";
+
+            // Path to your JS file (like usual), or empty ("") if you don't have one:
+            const JS_FILE_PATH = "script.js";
+
+            function loadScript(src) {
+                const script = document.createElement("script");
+                script.src = src + "?nocache=" + new Date().getTime();
+                script.async = true;
+                document.head.appendChild(script);
+            }
+            function loadCSS(href) {
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = href + "?nocache=" + new Date().getTime();
+                document.head.appendChild(link);
+            }
+            if (JS_FILE_PATH) loadScript(JS_FILE_PATH);
+            if (CSS_FILE_PATH) loadCSS(CSS_FILE_PATH);
+        });
+    </script>
+</head>
+
+<body class=" home">
+    <div class="container">
+        <header><span>dan's website layout 1 - Header</span></header>
+        <nav><ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <ul>
+        <li><a href="#">Subitem 1</a></li>
+        <li><a href="#">Subitem 2</a></li>
+    </ul>
+    </li>
+    <li><a href="#">Media</a></li>
+    <li><a href="#">Contact</a></li>
+</ul></nav>
+        <main>
+            <section class="content_welcome">
+<h1>Welcome to My Site</h1>
+<p>
+    I'm Dan and this is my personal website! I have a lot of interests and hopefully I
+    can share them with you on this site! Feel free to explore my pages and I will try
+    to update the site when I get the chance.&nbsp;</p>
+<p>This page is always a work-in-progress!</p>
+</section>
+            <section class="content_1">
+<h1>Content Block 1</h1>
+<p>This is the main content area.</p>
+<h2>Heading 2</h2>
+<p><strong>This is a strong text.</strong>This is normal text. <em>This is italic text.</em><a href="#">This
+        is a link.</a><sup>This is superscript text.</sup><sub>This is subscript
+        text.</sub><code>This is code text.</code><s>This is strikethrough text.</s></p>
+<h3>Heading 3</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+    </tbody>
+</table>
+<pre><code>This is a code block! It will scroll if your screen is not wide enough.</code></pre>
+<details>
+    <summary>Click me to expand</summary>
+    <p>This is the details content.</p>
+</details>
+<blockquote>
+    <p>This is a blockquote.</p><cite>— dan</cite>
+</blockquote>
+<h4>Heading 4</h4>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <ul>
+        <li>Subitem 1</li>
+        <li>Subitem 2</li>
+    </ul>
+    <li>Item 3</li>
+</ul>
+<ol>
+    <li>Ordered item 1</li>
+    <li>Ordered item 2</li>
+    <li>Ordered item 3</li>
+</ol>
+<dl>
+    <dt>Description list item 1</dt>
+    <dd>Details 1</dd>
+    <dt>Description list item 2</dt>
+    <dd>Details 2</dd>
+</dl>
+</section>
+            <section class="content_2">
+<div>
+    <h1>Content 1</h1>
+</div>
+<div>
+    <h1>Content 2</h1>
+</div>
+<div>
+    <h1>Content 3</h1>
+</div>
+</section>
+        </main>
+        <aside>
+<h2>Aside Heading</h2>
+<ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+    <li>Your Extension Works :D</li>
+</ul>
+</aside>
+        <footer>dan's website layout 1 - Footer</footer>
+
+        <!-- 
+        11ty layout guide:
+        
+        % include "" % requires a njk file to include.
+        % block % requires a PAGE-SPECIFIC njk or html file, in this case index.html, to define the content for that block.
+
+        % include % is for reusable components that are the same across multiple pages, like the header, nav, and
+        footer.
+        % block % is for page-specific content that will be different on each page, like the main content and aside.
+        Each page can define its own content for the blocks, while still using the same overall layout defined in this
+        layout.njk file.
+        -->
+
+    </div>
+</body>
+
+</html>

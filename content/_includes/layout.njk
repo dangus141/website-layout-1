@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css-files/index.css{{ nocache }}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout 1 | {{ title }}</title>
+    <!-- CACHEBUSTING. https://petrapixel.neocities.org/coding/cachebusting - fixes cache issues -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Path to your CSS file (like usual), or empty ("") if you don't have one:
+            const CSS_FILE_PATH = "style.css";
+
+            // Path to your JS file (like usual), or empty ("") if you don't have one:
+            const JS_FILE_PATH = "script.js";
+
+            function loadScript(src) {
+                const script = document.createElement("script");
+                script.src = src + "?nocache=" + new Date().getTime();
+                script.async = true;
+                document.head.appendChild(script);
+            }
+            function loadCSS(href) {
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = href + "?nocache=" + new Date().getTime();
+                document.head.appendChild(link);
+            }
+            if (JS_FILE_PATH) loadScript(JS_FILE_PATH);
+            if (CSS_FILE_PATH) loadCSS(CSS_FILE_PATH);
+        });
+    </script>
+</head>
+
+<body class=" {{ bodyClass }}">
+    <div class="container">
+        <header>{% include "components/header.njk" %}</header>
+        <nav>{% include "components/nav.njk" %}</nav>
+        <main>
+            <section class="content_welcome">{% block content_welcome %}{% endblock %}</section>
+            <section class="content_1">{% block content_1 %}{% endblock %}</section>
+            <section class="content_2">{% block content_2 %}{% endblock %}</section>
+        </main>
+        <aside>{% block aside %}{% endblock %}</aside>
+        <footer>{% include "components/footer.njk" %}</footer>
+
+        <!-- 
+        11ty layout guide:
+        
+        % include "" % requires a njk file to include.
+        % block % requires a PAGE-SPECIFIC njk or html file, in this case index.html, to define the content for that block.
+
+        % include % is for reusable components that are the same across multiple pages, like the header, nav, and
+        footer.
+        % block % is for page-specific content that will be different on each page, like the main content and aside.
+        Each page can define its own content for the blocks, while still using the same overall layout defined in this
+        layout.njk file.
+        -->
+
+    </div>
+</body>
+
+</html>

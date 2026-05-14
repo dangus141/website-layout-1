@@ -1,0 +1,97 @@
+---
+title: "Home"
+bodyClass: "home"
+---
+{% extends "layout.njk" %} <!-- IMPORTANT! 11ty cannot mix front matter layout with nunjucks tags -->
+
+{% block content_welcome %}
+<h1>Welcome to My Site</h1>
+<p>
+    I'm Dan and this is my personal website! I have a lot of interests and hopefully I
+    can share them with you on this site! Feel free to explore my pages and I will try
+    to update the site when I get the chance.&nbsp;</p>
+<p>This page is always a work-in-progress!</p>
+{% endblock %}
+
+{% block content_1 %}
+<h1>Content Block 1</h1>
+<p>This is the main content area.</p>
+<h2>Heading 2</h2>
+<p><strong>This is a strong text.</strong>This is normal text. <em>This is italic text.</em><a href="#">This
+        is a link.</a><sup>This is superscript text.</sup><sub>This is subscript
+        text.</sub><code>This is code text.</code><s>This is strikethrough text.</s></p>
+<h3>Heading 3</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+    </tbody>
+</table>
+<pre><code>This is a code block! It will scroll if your screen is not wide enough.</code></pre>
+<details>
+    <summary>Click me to expand</summary>
+    <p>This is the details content.</p>
+</details>
+<blockquote>
+    <p>This is a blockquote.</p><cite>— dan</cite>
+</blockquote>
+<h4>Heading 4</h4>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <ul>
+        <li>Subitem 1</li>
+        <li>Subitem 2</li>
+    </ul>
+    <li>Item 3</li>
+</ul>
+<ol>
+    <li>Ordered item 1</li>
+    <li>Ordered item 2</li>
+    <li>Ordered item 3</li>
+</ol>
+<dl>
+    <dt>Description list item 1</dt>
+    <dd>Details 1</dd>
+    <dt>Description list item 2</dt>
+    <dd>Details 2</dd>
+</dl>
+{% endblock %}
+
+{% block content_2 %}
+<div>
+    <h1>Content 1</h1>
+</div>
+<div>
+    <h1>Content 2</h1>
+</div>
+<div>
+    <h1>Content 3</h1>
+</div>
+{% endblock %}
+
+{% block aside %}
+<h2>Aside Heading</h2>
+<ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+    <li>Your Extension Works :D</li>
+</ul>
+{% endblock %}
