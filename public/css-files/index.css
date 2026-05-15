@@ -68,6 +68,7 @@ footer {
 .content_welcome {
     grid-area: section_welcome;
     background-color: rgb(238, 156, 156);
+    border: 1px black;
 }
 
 .content_1 {
